@@ -7,3 +7,5 @@ i'm a programmer
 - [Основы редактирования текста](/iNFA/Text.md.md)
 - [Markdown](/iNFA/Markdown.md)
 - [Mermaid](/iNFA/task_mermaid.md)
+- [bashcli](/iNFA/Bash_cli.md)
+- [git](/git.md)
