@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRO DRIVE | Летающие машины и Космические ракеты</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #050510;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Звездный фон */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            overflow: hidden;
+        }
+
+        .stars::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 
+                100px 200px white,
+                300px 50px white,
+                500px 400px white,
+                700px 100px white,
+                900px 500px white,
+                1200px 300px white,
+                1400px 600px white,
+                1600px 200px white,
+                1800px 400px white,
+                200px 700px white,
+                600px 800px white,
+                1000px 600px white,
+                1300px 900px white,
+                1700px 100px white,
+                400px 300px white,
+                800px 700px white,
+                1100px 200px white,
+                1500px 800px white,
+                50px 500px white,
+                250px 900px white;
+            animation: twinkle 4s infinite alternate;
+        }
+
+        .stars::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            background: #6ecbf5;
+            border-radius: 50%;
+            box-shadow: 
+                150px 150px #6ecbf5,
+                350px 450px #f5a623,
+                550px 250px #6ecbf5,
+                750px 550px #ff6b6b,
+                950px 350px #6ecbf5,
+                1150px 650px #f5a623,
+                1350px 450px #6ecbf5,
+                1550px 250px #ff6b6b,
+                1750px 550px #6ecbf5,
+                450px 750px #f5a623;
+            animation: twinkle 3s infinite alternate-reverse;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Навигация */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(5, 5, 16, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(110, 203, 245, 0.2);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #6ecbf5, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-size: 0.7rem;
+            display: block;
+            letter-spacing: 5px;
+            color: #6ecbf5;
+            -webkit-text-fill-color: #6ecbf5;
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6ecbf5, #f5a623);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #6ecbf5;
+        }
+
+        /* Hero секция */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(110, 203, 245, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #6ecbf5, #f5a623, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #050510;
+            background: linear-gradient(90deg, #6ecbf5, #f5a623);
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(110, 203, 245, 0.4);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px rgba(110, 203, 245, 0.7);
+        }
+
+        /* Плавающая ракета */
+        .floating-rocket {
+            position: absolute;
+            right: 5%;
+            top: 25%;
+            font-size: 4rem;
+            animation: floatRocket 6s ease-in-out infinite;
+            z-index: 0;
+            opacity: 0.6;
+            filter: drop-shadow(0 0 20px rgba(110, 203, 245, 0.5));
+        }
+
+        @keyframes floatRocket {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        /* Секция каталога */
+        .catalog {
+            padding: 100px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .section-title span {
+            background: linear-gradient(90deg, #6ecbf5, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(110, 203, 245, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(110, 203, 245, 0.5);
+            box-shadow: 0 20px 60px rgba(110, 203, 245, 0.2);
+        }
+
+        .card-image {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(5, 5, 16, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .card:nth-child(1) .card-image { background: linear-gradient(135deg, #1a1a3e, #2d1b69); }
+        .card:nth-child(2) .card-image { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+        .card:nth-child(3) .card-image { background: linear-gradient(135deg, #42275a, #734b6d); }
+        .card:nth-child(4) .card-image { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+        .card:nth-child(5) .card-image { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+        .card:nth-child(6) .card-image { background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b); }
+
+        .card-image .emoji {
+            position: relative;
+            z-index: 0;
+            animation: floatEmoji 3s ease-in-out infinite;
+        }
+
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 6px 15px;
+            background: rgba(245, 166, 35, 0.9);
+            color: #050510;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            z-index: 2;
+            text-transform: uppercase;
+        }
+
+        .card-content {
+            padding: 25px 25px 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-category {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #6ecbf5;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .card-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(110, 203, 245, 0.1);
+        }
+
+        .price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #6ecbf5, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-btn {
+            padding: 10px 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6ecbf5;
+            background: transparent;
+            border: 1px solid #6ecbf5;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .card-btn:hover {
+            background: #6ecbf5;
+            color: #050510;
+            box-shadow: 0 0 25px rgba(110, 203, 245, 0.5);
+        }
+
+        /* Секция преимуществ */
+        .features {
+            padding: 100px 50px;
+            background: linear-gradient(180deg, transparent, rgba(110, 203, 245, 0.03), transparent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: floatEmoji 3s ease-in-out infinite;
+        }
+
+        .feature:nth-child(2) .feature-icon { animation-delay: 0.5s; }
+        .feature:nth-child(3) .feature-icon { animation-delay: 1s; }
+        .feature:nth-child(4) .feature-icon { animation-delay: 1.5s; }
+
+        .feature h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #6ecbf5;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* CTA секция */
+        .cta {
+            padding: 120px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        /* Футер */
+        footer {
+            padding: 40px 50px;
+            text-align: center;
+            border-top: 1px solid rgba(110, 203, 245, 0.1);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        footer .logo {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.7rem;
+            }
+
+            .catalog {
+                padding: 60px 20px;
+            }
+
+            .features {
+                padding: 60px 20px;
+            }
+
+            .cta {
+                padding: 80px 20px;
+            }
+
+            .floating-rocket {
+                display: none;
+            }
+        }
+
+        /* Скроллбар */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050510;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #6ecbf5, #f5a623);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars"></div>
+
+    <nav>
+        <div class="logo">
+            ASTRO DRIVE
+            <span>Future Mobility</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#features">Преимущества</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="floating-rocket">🚀</div>
+        <h1>
+            Покори <span class="gradient">Вселенную</span><br>
+            Уже Сегодня
+        </h1>
+        <p>Летающие машины и космические ракеты нового поколения. Технологии будущего — в твоем гараже.</p>
+        <a href="#catalog" class="btn">Смотреть каталог</a>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <h2 class="section-title">Наш <span>Каталог</span></h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-image">
+                    <span class="card-badge">Хит</span>
+                    <span class="emoji">🚗</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Летающий автомобиль</div>
+                    <h3>AeroCruiser X1</h3>
+                    <p>Гибридный летающий автомобиль с вертикальным взлетом. 500 км/ч, автопилот и режим невидимости.</p>
+                    <div class="card-footer">
+                        <span class="price">$2.4M</span>
+                        <a href="#" class="card-btn">Купить</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <span class="card-badge">Новинка</span>
+                    <span class="emoji">🚀</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Космическая ракета</div>
+                    <h3>Stellar Voyager S7</h3>
+                    <p>Частная космическая ракета для суборбитальных полетов. 8 мест, полностью автономная система.</p>
+                    <div class="card-footer">
+                        <span class="price">$18.5M</span>
+                        <a href="#" class="card-btn">Купить</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <span class="card-badge">Эко</span>
+                    <span class="emoji">🛸</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Летающий автомобиль</div>
+                    <h3>SkyGlide E-VOLT</h3>
+                    <p>Электрический летающий седан с запасом хода 800 км. Бесшумный, экологичный, стильный.</p>
+                    <div class="card-footer">
+                        <span class="price">$1.8M</span>
+                        <a href="#" class="card-btn">Купить</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <span class="card-badge">Pro</span>
+                    <span class="emoji">🛰️</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Космическая ракета</div>
+                    <h3>Orbital Express O2</h3>
+                    <p>Грузовая ракета для доставки на орбиту. Полезная нагрузка до 12 тонн. Многоразовая ступень.</p>
+                    <div class="card-footer">
+                        <span class="price">$32M</span>
+                        <a href="#" class="card-btn">Купить</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <span class="card-badge">VIP</span>
+                    <span class="emoji">🏎️</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Летающий автомобиль</div>
+                    <h3>Hyperion GT</h3>
+                    <p>Спортивный летающий гиперкар. 0-1000 км/ч за 2 секунды. Квантовый двигатель, титан-карбоновый корпус.</p>
+                    <div class="card-footer">
+                        <span class="price">$7.9M</span>
+                        <a href="#" class="card-btn">Купить</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <span class="card-badge">Лимитед</span>
+                    <span class="emoji">🌌</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Космическая ракета</div>
+                    <h3>Lunar Explorer LE-1</h3>
+                    <p>Персональная ракета для полетов к Луне. Полный цикл жизнеобеспечения на 14 дней. 4 места.</p>
+                    <div class="card-footer">
+                        <span class="price">$95M</span>
+                        <a href="#" class="card-btn">Купить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Безопасность</h3>
+                <p>Все транспортные средства оснащены квантовыми системами защиты и AI-пилотами.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Скорость</h3>
+                <p>От 0 до 1000 км/ч за секунды. Технологии, которые опережают время.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <h3>Экологичность</h3>
+                <p>Нулевые выбросы. Работаем на чистой энергии звезд и антиматерии.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔧</div>
+                <h3>Гарантия</h3>
+                <p>Пожизненная гарантия на двигатели и бесплатное техобслуживание в космосе.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <h2>Готов к <span class="gradient">Старту</span>?</h2>
+        <p>Свяжись с нашими инженерами и подбери идеальный транспорт для себя.</p>
+        <a href="#" class="btn">Связаться с нами</a>
+    </section>
+
+    <footer>
+        <div class="logo">ASTRO DRIVE</div>
+        <p>&copy; 2025 ASTRO DRIVE. Все права защищены. Космос ждет.</p>
+    </footer>
+
+</body>
+</html>
