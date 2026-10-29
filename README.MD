@@ -9,5 +9,5 @@ i'm a programmer
 - [Mermaid](/iNFA/task_mermaid.md)
 - [bashcli](/iNFA/Bash_cli.md)
 - [git](/git.md)
-- [idex](/file:///C:/Users/admin/Favorites/Downloads/deepseek_html_20261019_c655ca.html)
+- [idex](/iNFA/website.html)
 - [shell](/iNFA/shell.md)
