@@ -9,5 +9,5 @@ i'm a programmer
 - [Mermaid](/iNFA/task_mermaid.md)
 - [bashcli](/iNFA/Bash_cli.md)
 - [git](/git.md)
-- [website.html](/file:///C:/Users/admin/Favorites/Downloads/website.html)
+- [website.html](file:///C:/Users/admin/Favorites/Downloads/website.html.html)
 - [shell](/iNFA/shell.md)
