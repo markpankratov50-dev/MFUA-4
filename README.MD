@@ -10,3 +10,4 @@ i'm a programmer
 - [bashcli](/iNFA/Bash_cli.md)
 - [git](/git.md)
 - [idex](/file:///C:/Users/admin/Favorites/Downloads/deepseek_html_20261019_c655ca.html)
+- [shell](/iNFA/shell.md)
