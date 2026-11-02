@@ -13,7 +13,7 @@ i'm a programmer
 
 Лабораторные работы 
 
-Одиночная работы:
+Одиночные работы:
 - [website.html](/iNFA/website.html.html)
 
 Работа в команде:
