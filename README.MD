@@ -16,8 +16,7 @@ i'm a programmer
 Одиночные работы:
   -https://magical-toffee-377cb5.netlify.app
 
--[MFUA-4](/Web
-/deepseek_html_20261102_2c6ddd.html)
+  -[MFUA-4](/Web/deepseek_html_20261102_2c6ddd.html)
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
