@@ -14,8 +14,7 @@ i'm a programmer
 Лабораторные работы 
 
 Одиночные работы:
-- file:///C:/Users/admin/Favorites/Downloads/deepseek_html_20261103_2c6ddd.html
-
+  -[deepseek_html_20261102_2c6ddd.html](/file:///C:/Users/admin/Favorites/Downloads/deepseek_html_20261103_2c6ddd.html)
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
