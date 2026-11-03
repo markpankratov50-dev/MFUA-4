@@ -14,7 +14,7 @@ i'm a programmer
 Лабораторные работы 
 
 Одиночные работы:
-- [website.html](/iNFA/website.html.html)
+- deepseek_html_20261102_2c6ddd.html
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
