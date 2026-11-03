@@ -14,7 +14,7 @@ i'm a programmer
 Лабораторные работы 
 
 Одиночные работы:
-  -https://reliable-sfogliatella-b1e7d3.netlify.app
+  -https://magical-toffee-377cb5.netlify.app
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
