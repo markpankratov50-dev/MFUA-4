@@ -8,7 +8,7 @@ i'm a programmer
 - [Markdown](/iNFA/Markdown.md)
 - [Mermaid](/iNFA/task_mermaid.md)
 - [bashcli](/iNFA/Bash_cli.md)
-- [git](/git.md)
+- [git](iNFA/git.md)
 - [shell](/iNFA/shell.md)
 
 Лабораторные работы 
