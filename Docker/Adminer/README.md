@@ -20,7 +20,7 @@ docker run -d `
   -p 8084:8080 `
   adminer:latest
 ```
-![1](MFUA-4/Docker/Adminer/8.PNG)
+
 
 Запустите **Adminer** в **Git-Bash/Linux/WSL 2.0/Mac**
 ```shell
@@ -29,11 +29,11 @@ docker run -d \
   -p 8084:8080 \
   adminer:latest
 ```
-![2](/mfuawork/2_DB&OS/Docker/Adminer/2.png)
+
 
 [Откройте: http://localhost:8084](http://localhost:8084)
 
-![3](/mfuawork/2_DB&OS/Docker/Adminer/3.png)
+
 
 
 При необходимости можно из этого же образа создать ещё один контейнер:
