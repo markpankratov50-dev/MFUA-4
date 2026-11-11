@@ -9,7 +9,8 @@
 docker run -d --name my-redis -p 6379:6379 redis:alpine
 ```
 
-![1](/mfuawork/2_DB&OS/Docker/Redis/1.png)
+![1](MFUA-4/Docker/Redis/
+5.PNG)
 
 Подключиться к **Redis CLI**
 ```shell
@@ -18,5 +19,5 @@ docker exec -it my-redis redis-cli
 
 Внутри Redis: ping → PONG, SET key value, GET key - ?
 
-![2](/mfuawork/2_DB&OS/Docker/Redis/6.PNG)
+![2](/mfuawork/Docker/Redis/6.PNG)
 
