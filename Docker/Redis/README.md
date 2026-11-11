@@ -20,4 +20,3 @@ docker exec -it my-redis redis-cli
 
 ![2](/mfuawork/2_DB&OS/Docker/Redis/2.png)
 
-> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
