@@ -9,7 +9,7 @@
 docker run -d --name my-redis -p 6379:6379 redis:alpine
 ```
 
-![1](MFUA-4/Docker/Redis/5.PNG)
+
 
 Подключиться к **Redis CLI**
 ```shell
