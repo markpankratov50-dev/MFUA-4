@@ -19,5 +19,4 @@ docker exec -it my-redis redis-cli
 
 Внутри Redis: ping → PONG, SET key value, GET key - ?
 
-![2](/mfuawork/Docker/Redis/6.PNG)
 
