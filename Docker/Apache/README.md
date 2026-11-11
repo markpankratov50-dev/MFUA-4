@@ -53,4 +53,3 @@ micro /usr/local/apache2/htdocs/index.html
 exit
 ```
 
-> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
