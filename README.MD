@@ -16,9 +16,11 @@ i'm a programmer
 Одиночные работы:
 Ссылка на сайт 
   -https://magical-toffee-377cb5.netlify.app
+
 Ссылка на репозиторий сайта 
   -[MFUA-4](/Web/deepseek_html_20261102_2c6ddd.html)
-  -[MFUA-4](/LibreDB Studio)
+  
+-[MFUA-4](/LibreDB Studio/README.md)
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
