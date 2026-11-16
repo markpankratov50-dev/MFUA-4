@@ -19,7 +19,7 @@ i'm a programmer
 
 Ссылка на репозиторий сайта 
   
--[LibreDB Studio](/iNFA/LibreDB Studio)
+-[LibreDB Studio](MFUA-4/iNFA/LibreDB Studio)
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
