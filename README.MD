@@ -17,8 +17,7 @@ i'm a programmer
 Ссылка на сайт 
   -https://magical-toffee-377cb5.netlify.app
 
-LibreDB Studio
--[LibreDB Studio](MFUA-4/iNFA/LibreDB Studio/README.md)
+
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
