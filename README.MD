@@ -18,8 +18,7 @@ i'm a programmer
   -https://magical-toffee-377cb5.netlify.app
 
 Ссылка на репозиторий сайта 
-  -[MFUA-4](/Web/deepseek_html_20261102_2c6ddd.html)
-  -[LibreDB Studio]
+  -[LibreDB Studio](/iNFA/LibreDB Studio)
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
