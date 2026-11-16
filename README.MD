@@ -19,8 +19,7 @@ i'm a programmer
 
 Ссылка на репозиторий сайта 
   -[MFUA-4](/Web/deepseek_html_20261102_2c6ddd.html)
-  
--[MFUA-4](/LibreDB Studio/README.md)
+  -[LibreDB Studio]
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
