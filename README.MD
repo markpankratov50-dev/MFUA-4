@@ -11,17 +11,14 @@ i'm a programmer
 - [git](iNFA/git.md)
 - [shell](/iNFA/shell.md)
 
-Лабораторные работы 
+###Лабораторные работы 
 
 Одиночные работы:
 Ссылка на сайт 
   -https://magical-toffee-377cb5.netlify.app
 
-
+- [Docker_tasks](Docker)
 
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
 
-Работа с докером
-### Docker
-- [Docker_tasks](Docker)
