@@ -17,7 +17,7 @@ i'm a programmer
 Ссылка на сайт 
   -https://magical-toffee-377cb5.netlify.app
 
-- [README.MD](/iNFA/README.MD)
+- [README.MD](/iNFA/LibreDB Studio/README.MD)
 
 - [Docker_tasks](Docker)
 
