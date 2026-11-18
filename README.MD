@@ -24,3 +24,5 @@ i'm a programmer
 Работа в команде:
 - [CinemaHere](https://github.com/maxnikolaev09-netizen/CinemaHere)
 
+#Преподаватель
+https://gitflic.ru/project/rurewa/mfua
