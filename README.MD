@@ -17,7 +17,7 @@ i'm a programmer
 Ссылка на сайт 
   -https://magical-toffee-377cb5.netlify.app
 
-- [LibreDB Studio](/MFUA-4/iNFA/README.MD)
+- [LibreDB Studio](/MFUA-4/iNFA/README.MD) https://github.com/markpankratov50-dev/MFUA-4/tree/main/iNFA/LibreDB%20Studio
 
 - [Docker_tasks](Docker)
 
