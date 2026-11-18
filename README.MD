@@ -18,7 +18,7 @@ i'm a programmer
   -https://magical-toffee-377cb5.netlify.app
 
 - [LibreDB Studio](https://github.com/markpankratov50-dev/MFUA-4/tree/main/iNFA/LibreDB%20Studio) 
-
+- [Ollama](https://github.com/markpankratov50-dev/MFUA-4/tree/main/iNFA/Ollama)
 - [Docker_tasks](Docker)
 
 Работа в команде:
