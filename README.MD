@@ -16,7 +16,7 @@ i'm a programmer
 Одиночные работы:
 Ссылка на сайт 
   -https://magical-toffee-377cb5.netlify.app
-- [LibreDB Studio](MFUA-4/LibreDB Studio/README.md)
+-[LibreDB Studio](MFUA-4/LibreDB Studio/README.md)
 - [Docker_tasks](Docker)
 
 Работа в команде:
